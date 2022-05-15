@@ -1,4 +1,6 @@
 // colocar o código aqui
+
+// declarar variáveis
 int state1 = 0;
 int state2 = 0;
 int dc1 = 5;
@@ -6,8 +8,8 @@ int dc2 = 6;
 int push1 = 7;
 int push2 = 4;
 
-void setup()
-{
+// declarar funções
+
  pinMode (dc1,OUTPUT);
  pinMode (dc2,OUTPUT);
  pinMode (push1,INPUT);
