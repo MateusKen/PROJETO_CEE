@@ -20,7 +20,7 @@ void loop()
   state2 = digitalRead (push2);
   if (state1 == HIGH)
   {
-    digitalWrite (dc1,HIGH);
+    digitalWrite (dc1,64);
     digitalWrite (dc2,LOW);
     delay(3000);
     digitalWrite (dc1,LOW);
@@ -29,7 +29,7 @@ void loop()
   if (state2 == HIGH)
   {
     digitalWrite (dc1,LOW);
-    digitalWrite (dc2,HIGH);
+    digitalWrite (dc2,64);
     delay(3000);
     digitalWrite (dc1,LOW);
     digitalWrite (dc2,LOW);
