@@ -19,18 +19,18 @@ void loop()
   state2 = digitalRead (push2); //determina o stado 2 como o botão 2 está pressionado ou não
   if (state1 == HIGH)//lê se o botão está pressionado
   {
-    digitalWrite (dc1,64);//liga o motor no sentido horário
-    digitalWrite (dc2,LOW);
+    analogWrite (dc1,10);//liga o motor no sentido horário
+    analogWrite (dc2,LOW);
     delay(3000);//espera 3 segundos
-    digitalWrite (dc1,LOW);//desliga o motor
-    digitalWrite (dc2,LOW);
+    analogWrite (dc1,LOW);//desliga o motor
+    analogWrite (dc2,LOW);
   }
   if (state2 == HIGH)
   {
-    digitalWrite (dc1,LOW);
-    digitalWrite (dc2,64);//liga o motor no sentido anti-horário
+    analogWrite (dc1,LOW);
+    analogWrite (dc2,10);//liga o motor no sentido anti-horário
     delay(3000);//espera 3 segundos
-    digitalWrite (dc1,LOW);//desliga o motor
-    digitalWrite (dc2,LOW);
+    analogWrite (dc1,LOW);//desliga o motor
+    analogWrite (dc2,LOW);
   }
 }
