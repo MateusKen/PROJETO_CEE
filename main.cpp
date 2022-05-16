@@ -1,6 +1,7 @@
 int state1 = 0; 
 int state2 = 0;
 int state3 = 0;
+int posicao = 1;
 
 // OUTPUT
 int ElevadorMotor1 = 6;
