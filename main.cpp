@@ -22,6 +22,8 @@ int BotaoAndar1 = 7;
 int BotaoAndar2= 4;
 int BotaoAndar3= 2;
 
+
+// FUNÇÕES
 void SubirAndar(){
 	 analogWrite (ElevadorMotor1,10);//liga o motor no sentido horário
     analogWrite (ElevadorMotor2,LOW);
@@ -37,6 +39,29 @@ void DescerAndar(){
     analogWrite (ElevadorMotor1,LOW);//desliga o motor
     analogWrite (ElevadorMotor2,LOW);
 }
+
+/*
+
+void AbrirPorta1(){
+}
+
+void FecharPorta1(){
+}
+
+void AbrirPorta2(){
+}
+
+void FecharPorta2(){
+}
+
+void AbrirPorta3(){
+}
+
+void FecharPorta3(){
+}
+
+*/
+
 void setup()
 {
  pinMode (ElevadorMotor1,OUTPUT); pinMode (ElevadorMotor2,OUTPUT); // OUTPUT
