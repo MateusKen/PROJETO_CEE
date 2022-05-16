@@ -1,37 +1,54 @@
 int state1 = 0; 
 int state2 = 0;
-int dc1 = 6;
-int dc2 = 5;
-int push1 = 7;
-int push2 = 4;
+int state3 = 0;
+
+// OUTPUT
+int ElevadorMotor1 = 6;
+int ElevadorMotor2 = 5;
+
+/*
+int AbrePorta1 = ?;
+int FechaPorta1 = ?;
+int AbrePorta2 = ?;
+int FechaPorta2 = ?;
+int AbrePorta3 = ?;
+int FechaPorta3 = ?;
+*/
+
+
+// INPUT
+int BotaoAndar1 = 7;
+int BotaoAndar2= 4;
+int BotaoAndar3= 2;
 
 void SubirAndar(){
-	 analogWrite (dc1,10);//liga o motor no sentido horário
-    analogWrite (dc2,LOW);
+	 analogWrite (ElevadorMotor1,10);//liga o motor no sentido horário
+    analogWrite (ElevadorMotor2,LOW);
     delay(3000);//espera 3 segundos
-    analogWrite (dc1,LOW);//desliga o motor
-    analogWrite (dc2,LOW);
+    analogWrite (ElevadorMotor1,LOW);//desliga o motor
+    analogWrite (ElevadorMotor2,LOW);
 }
 
 void DescerAndar(){
-	analogWrite (dc1,LOW);
-    analogWrite (dc2,10);//liga o motor no sentido anti-horário
+	analogWrite (ElevadorMotor1,LOW);
+    analogWrite (ElevadorMotor2,10);//liga o motor no sentido anti-horário
     delay(3000);//espera 3 segundos
-    analogWrite (dc1,LOW);//desliga o motor
-    analogWrite (dc2,LOW);
+    analogWrite (ElevadorMotor1,LOW);//desliga o motor
+    analogWrite (ElevadorMotor2,LOW);
 }
 void setup()
 {
- pinMode (dc1,OUTPUT); 
- pinMode (dc2,OUTPUT);
- pinMode (push1,INPUT);
- pinMode (push2,INPUT);
+ pinMode (ElevadorMotor1,OUTPUT); pinMode (ElevadorMotor2,OUTPUT); // OUTPUT
+ pinMode (BotaoAndar1,INPUT);
+ pinMode (BotaoAndar2, INPUT);
+ pinMode(BotaoAndar3, INPUT);
 }
 
 void loop()
 {
-  state1 = digitalRead (push1); //determina o stado 1 como o botão 1 está pressionado ou não
-  state2 = digitalRead (push2); //determina o stado 2 como o botão 2 está pressionado ou não
+  state1 = digitalRead (BotaoAndar1);                                                      
+  state2 = digitalRead (BotaoAndar2);                                                        
+  state3 = digitalRead (BotaoAndar3);
   if (state1 == HIGH){
 	SubirAndar();
   }
