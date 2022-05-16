@@ -1,8 +1,8 @@
 int state1 = 0; 
 int state2 = 0;
 int state3 = 0;
-int posicao = 1;
-
+int posicao = 3;
+int posicaoAtual = 0;
 // OUTPUT
 int ElevadorMotor1 = 6;
 int ElevadorMotor2 = 5;
@@ -68,6 +68,7 @@ void setup()
  pinMode (BotaoAndar1,INPUT);
  pinMode (BotaoAndar2, INPUT);
  pinMode(BotaoAndar3, INPUT);
+ Serial.begin(9600);
 }
 
 void loop()
@@ -75,11 +76,17 @@ void loop()
   state1 = digitalRead (BotaoAndar1);                                                      
   state2 = digitalRead (BotaoAndar2);                                                        
   state3 = digitalRead (BotaoAndar3);
+  Serial.print(posicaoAtual);
+  Serial.println();
   if (state1 == HIGH){
-	SubirAndar();
-  }
-  if (state2 == HIGH){
-  	DescerAndar();
+  	posicaoAtual = 1 - posicao;
+    Serial.write(posicaoAtual);
+    if (posicaoAtual < 0){
+      abs(posicaoAtual);
+      for (posicaoAtual; posicaoAtual >0; posicaoAtual -=1){
+      	DescerAndar();
+      }
+    }
   }
 
 }
