@@ -2,7 +2,7 @@ int state1 = 0; // estado do botão 1
 int state2 = 0; // estado do botão 2
 int state3 = 0; // estado do botão 3
 int posicao = 3; //variável que indica a posicao atual do elevador
-int posicaoAtual = 0; // variavel que assosciada à posição, diz quantas vez o elevador repetirá a ação
+int posicaoAtual = 0; // variavel que assosciada à posição, diz quantas vezes o elevador repetirá a ação
 
 // OUTPUT
 int ElevadorMotor1 = 6; 
