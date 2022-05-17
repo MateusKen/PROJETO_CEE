@@ -65,7 +65,16 @@ void FecharPorta3(){
 
 void setup()
 {
- pinMode (ElevadorMotor1,OUTPUT); pinMode (ElevadorMotor2,OUTPUT); // OUTPUT
+ /*
+ pinMode(AbrePorta1, OUTPUT);
+ pinMode(FechaPorta1, OUTPUT);
+ pinMode(AbrePorta2, OUTPUT);
+ pinMode(FechaPorta2, OUTPUT);
+ pinMode(AbrePorta3, OUTPUT);
+ pinMode(FechaPorta3, OUTPUT);
+ */
+ pinMode (ElevadorMotor1,OUTPUT); 
+ pinMode (ElevadorMotor2,OUTPUT);
  pinMode (BotaoAndar1,INPUT);
  pinMode (BotaoAndar2, INPUT);
  pinMode(BotaoAndar3, INPUT);
@@ -78,18 +87,18 @@ void loop()
   state3 = digitalRead (BotaoAndar3);
   
   if (state1 == HIGH){ //o que acontece ao apertar o botão do 1º andar
-  	posicaoAtual = 1 - posicao;
+  	posicaoAtual = 1 - posicao; // faz uma conta para saber quantos andares o elevador tem que andar
     if (posicaoAtual < 0){
       while (posicaoAtual <0){
       	posicaoAtual += 1;
         DescerAndar();
-      }
-    posicao = 1; 
+      } 
     }
+    posicao = 1; // redefine a posição atual do elevador
   }
   
   if (state2 == HIGH){ // o que acontece ao apertar o botão do 2º andar
-  	posicaoAtual = 2 - posicao;
+  	posicaoAtual = 2 - posicao; // faz uma conta para saber quantos andares o elevador tem que andar
     if (posicaoAtual <0){
       while (posicaoAtual < 0){
       	posicaoAtual += 1;
@@ -102,16 +111,18 @@ void loop()
         	SubirAndar();
         }	
       }
-    posicao = 2;
+    posicao = 2; // redefine a posição atual do elevador
     }
-  if (state3 == HIGH){
-  	posicaoAtual = 3 - posicao;
+  
+  if (state3 == HIGH){ // o que acontece ao apertar o botão do 3º andar
+  	posicaoAtual = 3 - posicao; // faz uma conta para saber quantos andares o elevador tem que andar
     if (posicaoAtual > 0){
       while (posicaoAtual > 0){
       	posicaoAtual -=1;
         SubirAndar();
       }
     }
+    posicao = 3; // redefine a posição atual do elevador
   }
 }
 
