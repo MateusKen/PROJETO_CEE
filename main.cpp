@@ -8,15 +8,6 @@ int posicaoAtual = 0; // variavel que assosciada à posição, diz quantas vezes
 int ElevadorMotor1 = 6; 
 int ElevadorMotor2 = 5;
 
-/*
-int AbrePorta1 = ?;
-int FechaPorta1 = ?;
-int AbrePorta2 = ?;
-int FechaPorta2 = ?;
-int AbrePorta3 = ?;
-int FechaPorta3 = ?;
-*/
-
 
 // INPUT
 int BotaoAndar1 = 7;
@@ -41,38 +32,10 @@ void DescerAndar(){ // desce o elevador 1 andar
     analogWrite (ElevadorMotor2,LOW);
 }
 
-/*
-
-void AbrirPorta1(){
-}
-
-void FecharPorta1(){
-}
-
-void AbrirPorta2(){
-}
-
-void FecharPorta2(){
-}
-
-void AbrirPorta3(){
-}
-
-void FecharPorta3(){
-}
-
-*/
 
 void setup()
 {
- /*
- pinMode(AbrePorta1, OUTPUT);
- pinMode(FechaPorta1, OUTPUT);
- pinMode(AbrePorta2, OUTPUT);
- pinMode(FechaPorta2, OUTPUT);
- pinMode(AbrePorta3, OUTPUT);
- pinMode(FechaPorta3, OUTPUT);
- */
+ 
  pinMode (ElevadorMotor1,OUTPUT); 
  pinMode (ElevadorMotor2,OUTPUT);
  pinMode (BotaoAndar1,INPUT);
